@@ -19,6 +19,7 @@ public class Walking_Animation : MonoBehaviour
     private Foot R_Foot_;
     private bool L_isMoving = false;
     private bool R_isMoving = false;
+    private bool nextFootIsLeft = true; // Track which foot should move next
 
     private void Start()
     {
@@ -28,20 +29,24 @@ public class Walking_Animation : MonoBehaviour
 
     void Update()
     {
-        CheckFootMovement(L_Foot, L_TargetPoint, R_Foot_, L_isMoving);
-        CheckFootMovement(R_Foot, R_TargetPoint, L_Foot_, R_isMoving);
+        // Only check the foot that should move next
+        if (nextFootIsLeft)
+        {
+            CheckFootMovement(L_Foot, L_TargetPoint, R_Foot_, L_isMoving, true);
+        }
+        else
+        {
+            CheckFootMovement(R_Foot, R_TargetPoint, L_Foot_, R_isMoving, false);
+        }
     }
 
-    private void CheckFootMovement(GameObject foot, GameObject targetPoint, Foot otherFoot, bool isMoving)
+    private void CheckFootMovement(GameObject foot, GameObject targetPoint, Foot otherFoot, bool isMoving, bool isLeftFoot)
     {
         float distance = Vector3.Distance(foot.transform.position, targetPoint.transform.position);
 
         if (distance > stepDistance && otherFoot.isGrounded && !isMoving)
         {
-            if (foot == L_Foot)
-                StartCoroutine(MoveFoot(foot, targetPoint, true));
-            else
-                StartCoroutine(MoveFoot(foot, targetPoint, false));
+            StartCoroutine(MoveFoot(foot, targetPoint, isLeftFoot));
         }
     }
 
@@ -78,10 +83,16 @@ public class Walking_Animation : MonoBehaviour
         // Ensure final position is exact
         foot.transform.position = targetPosition;
 
-        // Clear the appropriate moving flag
+        // Clear the appropriate moving flag and switch to the other foot
         if (isLeftFoot)
+        {
             L_isMoving = false;
+            nextFootIsLeft = false; // Next time move the right foot
+        }
         else
+        {
             R_isMoving = false;
+            nextFootIsLeft = true; // Next time move the left foot
+        }
     }
 }

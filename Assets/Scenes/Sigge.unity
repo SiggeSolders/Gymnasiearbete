@@ -632,12 +632,10 @@ Transform:
   m_GameObject: {fileID: 48602018}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0005954504, y: -0.655, z: -0.00014591217}
+  m_LocalPosition: {x: 0.0005954504, y: -0.61, z: -0.00014591217}
   m_LocalScale: {x: 0.3290031, y: 0.13856286, z: 0.3290031}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1424685521}
-  - {fileID: 270772384}
   - {fileID: 1384088428}
   m_Father: {fileID: 1161008904}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -858,6 +856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1effadfb515f4fc4db9ea73f0e69cdd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementDirection: {fileID: 1384088432}
 --- !u!1 &112950776 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1039632119608136530, guid: 73567b831fcedcf4681f681b77e8c1b9, type: 3}
@@ -1298,11 +1297,11 @@ Transform:
   m_GameObject: {fileID: 270772383}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.425, y: -5.398273, z: 0.00044349788}
-  m_LocalScale: {x: 0.35294506, y: 0.83803123, z: 0.35294506}
+  m_LocalPosition: {x: 1.0451179, y: -5.5908523, z: 0.001090606}
+  m_LocalScale: {x: 0.8679275, y: 0.8679274, z: 0.8679275}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 48602019}
+  m_Father: {fileID: 1384088428}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &270772386
 MeshRenderer:
@@ -1370,6 +1369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxRaycastDistance: 10
+  movementDirection: {fileID: 1384088427}
 --- !u!1 &375515299 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6905609870639353253, guid: 73567b831fcedcf4681f681b77e8c1b9, type: 3}
@@ -2235,7 +2235,7 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 73.57617
+    limit: 78.835236
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -2781,9 +2781,9 @@ ConfigurableJoint:
   m_XMotion: 0
   m_YMotion: 0
   m_ZMotion: 0
-  m_AngularXMotion: 2
-  m_AngularYMotion: 2
-  m_AngularZMotion: 2
+  m_AngularXMotion: 1
+  m_AngularYMotion: 1
+  m_AngularZMotion: 1
   m_LinearLimitSpring:
     spring: 0
     damper: 0
@@ -2795,22 +2795,22 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LowAngularXLimit:
-    limit: 0
+    limit: -163.73708
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 0
+    limit: -13.31253
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
     spring: 0
     damper: 0
   m_AngularYLimit:
-    limit: 0
+    limit: 10.747402
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 0
+    limit: 20.17556
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -3022,7 +3022,7 @@ ConfigurableJoint:
   m_ZMotion: 0
   m_AngularXMotion: 1
   m_AngularYMotion: 1
-  m_AngularZMotion: 1
+  m_AngularZMotion: 0
   m_LinearLimitSpring:
     spring: 0
     damper: 0
@@ -3049,7 +3049,7 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 18.060371
+    limit: 6.912989
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -3297,7 +3297,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4.8979, y: 4.8979, z: 4.8979}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4321,7 +4321,7 @@ Transform:
   m_GameObject: {fileID: 1057914390}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -5.92}
+  m_LocalPosition: {x: 0, y: 1.31, z: -5.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4756,8 +4756,8 @@ MonoBehaviour:
   R_Foot: {fileID: 1499625333}
   L_TargetPoint: {fileID: 270772383}
   R_TargetPoint: {fileID: 1424685520}
-  stepDuration: 0.3
-  stepHeight: 0.25
+  stepDuration: 0.4
+  stepHeight: 0.3
   stepDistance: 0.5
   stepCurve:
     serializedVersion: 2
@@ -4894,7 +4894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1171745079
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5052,7 +5052,7 @@ ConfigurableJoint:
   m_ZMotion: 0
   m_AngularXMotion: 1
   m_AngularYMotion: 1
-  m_AngularZMotion: 1
+  m_AngularZMotion: 0
   m_LinearLimitSpring:
     spring: 0
     damper: 0
@@ -5079,7 +5079,7 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 18.060371
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -5378,7 +5378,7 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 23.05597
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -6269,7 +6269,6 @@ GameObject:
   - component: {fileID: 1384088428}
   - component: {fileID: 1384088431}
   - component: {fileID: 1384088430}
-  - component: {fileID: 1384088429}
   - component: {fileID: 1384088432}
   m_Layer: 0
   m_Name: Movement_Direction
@@ -6287,33 +6286,14 @@ Transform:
   m_GameObject: {fileID: 1384088427}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
   m_LocalScale: {x: 0.40665272, y: 0.9655546, z: 0.40665272}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1424685521}
+  - {fileID: 270772384}
   m_Father: {fileID: 48602019}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1384088429
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1384088427}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1384088430
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6321,7 +6301,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384088427}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -6407,11 +6387,11 @@ Transform:
   m_GameObject: {fileID: 1424685520}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.35439014, y: -5.398273, z: 0.00044349788}
-  m_LocalScale: {x: 0.35294506, y: 0.83803123, z: 0.35294506}
+  m_LocalPosition: {x: -0.871481, y: -5.5908523, z: 0.001090606}
+  m_LocalScale: {x: 0.8679275, y: 0.8679274, z: 0.8679275}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 48602019}
+  m_Father: {fileID: 1384088428}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1424685523
 MeshRenderer:
@@ -6479,6 +6459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxRaycastDistance: 10
+  movementDirection: {fileID: 1384088427}
 --- !u!1 &1429143216
 GameObject:
   m_ObjectHideFlags: 0
@@ -6545,9 +6526,9 @@ ConfigurableJoint:
   m_XMotion: 0
   m_YMotion: 0
   m_ZMotion: 0
-  m_AngularXMotion: 2
-  m_AngularYMotion: 2
-  m_AngularZMotion: 2
+  m_AngularXMotion: 1
+  m_AngularYMotion: 1
+  m_AngularZMotion: 1
   m_LinearLimitSpring:
     spring: 0
     damper: 0
@@ -6559,22 +6540,22 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LowAngularXLimit:
-    limit: 0
+    limit: -168.9729
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 0
+    limit: -10.1604805
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
     spring: 0
     damper: 0
   m_AngularYLimit:
-    limit: 0
+    limit: 10.649079
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 0
+    limit: 16.440264
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -8907,7 +8888,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &2142972452
 Rigidbody:
   m_ObjectHideFlags: 0
