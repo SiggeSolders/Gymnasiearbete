@@ -20,8 +20,8 @@ public class PlayerContoller : MonoBehaviour
     [SerializeField] private int moveSpeed;
     private RagdollPart grabDirection_R;
     private RagdollPart grabDirection_L;
-    private Hand leftHand;
-    private Hand rightHand;
+    [SerializeField] private Hand leftHand;
+    [SerializeField] private Hand rightHand;
 
     [Header("Camera")]
     private CameraHolder camHolder;
@@ -40,16 +40,13 @@ public class PlayerContoller : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         grabDirection_L = GetComponentInChildren<RagdollPart>();
         grabDirection_R = GetComponentInChildren<RagdollPart>();
-        leftHand = GetComponentInChildren<Hand>();
-        rightHand = GetComponentInChildren<Hand>();
-
     }
     private void Update()
     {
         Move();
         RotateCamera();
-        if(leftMouse) { Grab(grabDirection_L.gameObject, leftHand.gameObject); }
-        if(rightMouse) { Grab(grabDirection_R.gameObject, rightHand.gameObject); }
+        if(leftMouse) { Grab(grabDirection_L.gameObject, leftHand); }
+        if(rightMouse) { Grab(grabDirection_R.gameObject, rightHand); }
 
     }
 
@@ -64,11 +61,11 @@ public class PlayerContoller : MonoBehaviour
     }
     public void OnLeftClick(InputAction.CallbackContext context)
     {
-        if (context.ReadValue<float>() < 1) { leftMouse = false; }
+        if (context.ReadValue<float>() < 1) { leftMouse = false; } else { leftMouse = true; }
     }
     public void OnRightClick(InputAction.CallbackContext context)
     {
-        if (context.ReadValue<float>() < 1) { rightMouse = false; }
+        if (context.ReadValue<float>() < 1) { rightMouse = false; } else { rightMouse = true; }
     }
 
     #endregion
@@ -96,14 +93,11 @@ public class PlayerContoller : MonoBehaviour
         camHolder.gameObject.transform.rotation = Quaternion.Euler(0, -xRotation + 90, -yRotation);
     }
 
-    public void Grab(GameObject grabTarget, GameObject hand)
+    public void Grab(GameObject grabTarget, Hand hand)
     {
-        Vector3 direction = grabTarget.gameObject.transform.position - transform.position;
-        direction.Normalize();
-        Rigidbody rb = hand.GetComponent<Rigidbody>();
-
-        // Apply the force towards the target
-        rb.AddForce(direction * 100);
+        print(hand.joint.targetPosition);
+        print(grabTarget.transform.position);
+        hand.joint.targetPosition = grabTarget.transform.position ; 
     }
 
     #endregion
